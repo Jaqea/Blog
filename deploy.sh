@@ -24,6 +24,6 @@ git remote add origin https://github.com/Jaqea/Blog.git
 
 # 如果使用 travis 持续集成
 sed -i'' "s~git@github.com:~https://s~git@github.com:~https://${GIT_REPO_TOKEN}@github.com/~"
-git push origin gh-pages
+git push origin master:gh-pages
 
 cd -
