@@ -23,6 +23,6 @@ git commit -m 'deploy'
 # sed -i'' "s~git@github.com:~https://s~git@github.com:~https://${GIT_REPO_TOKEN}@github.com/~"
 
 # 如果使用 travis 持续集成
-git push https://${GIT_REPO_TOKEN}@github.com/Jaqea/Blog.git master:gh-pages
+git push -f https://${GIT_REPO_TOKEN}@github.com/Jaqea/Blog.git master:gh-pages
 
 cd -
