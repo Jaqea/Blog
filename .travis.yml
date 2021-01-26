@@ -11,17 +11,10 @@ yarn:
 # branches:
 #   only:
 #   - master
-
-
+before_script: chmod 777 *.sh
 script: # 在构建阶段需要运行的命令，一条一行，类似的还有 before_script、after_script
-  - yarn build
-deploy: 
-  local_dir: docs/.vuepress/dist
-  github-token: $GIT_REPO_TOKEN
-  target-branch: gh-pages
-  keep-history: true
-  on:   
-    branch: master
+  - ./deploy.sh
+branch: master
 
 notifications: # 设置通知项
   email: true
