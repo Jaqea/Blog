@@ -21,6 +21,7 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # sed -i'' "s~git@github.com:~https://s~git@github.com:~https://${GIT_REPO_TOKEN}@github.com/~"
+git pull https://${GIT_REPO_TOKEN}@github.com/Jaqea/Blog.git
 git remote add origin https://${GIT_REPO_TOKEN}@github.com/Jaqea/Blog.git
 
 # 如果使用 travis 持续集成
