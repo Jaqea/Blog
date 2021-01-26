@@ -20,8 +20,8 @@ git commit -m 'deploy'
 # git push -f git@github.com:7revor/7revor.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-sed -i'' "s~git@github.com:~https://s~git@github.com:~https://${GIT_REPO_TOKEN}@github.com/~"
-git remote add origin https://github.com/Jaqea/Blog.git
+# sed -i'' "s~git@github.com:~https://s~git@github.com:~https://${GIT_REPO_TOKEN}@github.com/~"
+git remote add origin https://${GIT_REPO_TOKEN}@github.com/Jaqea/Blog.git
 
 # 如果使用 travis 持续集成
 git push origin master:gh-pages
