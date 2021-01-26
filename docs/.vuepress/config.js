@@ -1,7 +1,7 @@
 module.exports = {
   title: "Jaqea's Blog",
   description: "苦尽甘来不负众生而善之",
-  base: "./",
+  base: "/",
   head: [
     [
       "link",
