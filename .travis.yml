@@ -1,20 +1,27 @@
 language: node_js
 node_js:
-  - "lts/*"
+- lts/*
 sudo: required
 cache:
   directories:
-    - node_modules
+  - node_modules
 yarn:
   Installed: 1.19.1
   Candidate: 1.19.1
-# branches:
-#   only:
-#   - master
 before_script: chmod 777 *.sh
-script: # 在构建阶段需要运行的命令，一条一行，类似的还有 before_script、after_script
-  - ./deploy.sh
+script:
+- "./deploy.sh"
 branch: master
-
-notifications: # 设置通知项
+notifications:
   email: true
+before_install:
+- openssl aes-256-cbc -K $encrypted_b44f898cc0ec_key -iv $encrypted_b44f898cc0ec_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+
+# 添加 SSH 信任列表
+addons:
+  ssh_known_hosts: 182.92.60.170
+# 执行部署脚本（）
+after_success:
+  - rm -rf root@182.92.60.170:/home/Jaqea/Blog/*
+  - scp -o stricthostkeychecking=no -r ./dist/* root@182.92.60.170:/home/Jaqea/Blog
