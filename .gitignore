@@ -3,4 +3,3 @@ deploy.bat
 github_token
 docs/.vuepress/dist
 github_token.txt
-id_rsa.enc
